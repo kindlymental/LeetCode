@@ -64,4 +64,19 @@ const PredictTheWinner = (nums) => {
   说明："aa" 被 "a2" 替代。"bb" 被 "b2" 替代。"ccc" 被 "c3" 替代。
  */
 
-
+ /**
+  * 70、爬楼梯
+  * 爬楼梯，需要n阶才能到达楼顶
+  * 每次可以爬1或2个台阶，问有多少种不同的方法可以爬到楼顶呢
+  */
+ // 1、利用斐波那契公式  时间复杂度：O(logn)
+ // 2、动态规划
+ var climbStairs = function(n) {
+   const dp = [];
+   dp[0] = 1;
+   dp[1] = 1;
+   for (let i=2; i<=n; i++) {
+      dp[i] = dp[i-1] + dp[i-2];
+   }
+   return dp[n];
+ }
